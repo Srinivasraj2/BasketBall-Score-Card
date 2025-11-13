@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket Ball Score Card</title>
+    <!-- Links to the separate CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="outer">
+        <div class="inner">
+            <h1>HOME</h1>
+            <!-- Score display ID -->
+            <h1 id="home-score">0</h1>
+            <button onclick="hinc1()">+1</button>
+            <button onclick="hinc2()">+2</button>
+            <button onclick="hinc3()">+3</button>
+        </div>
+        <div class="inner">
+            <h1>GUEST</h1>
+            <!-- Score display ID -->
+            <h1 id="guest-score">0</h1>
+            <button onclick="ginc1()">+1</button>
+            <button onclick="ginc2()">+2</button>
+            <button onclick="ginc3()">+3</button>
+        </div>
+    </div>
+
+
+    <!-- Leader display ID -->
+    <h1 id="leader"></h1>
+    <!-- New Game Button ID -->
+    <button onclick="makezero()" id="make">New Game</button>
+    <!-- Links to the JavaScript file -->
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+/* --- Global Reset and Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+
+:root {
+    --primary-color: #2c73d2;
+    /* Vibrant Blue */
+    --secondary-color: #f39c12;
+    /* Amber/Orange for emphasis */
+    --reset-red: #d9534f;
+    /* Reset Action Color */
+    --bg-light: #f4f7f9;
+    --text-dark: #333333;
+    --score-bg: #eef3f7;
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 30px 10px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* --- Outer Container (The Main Scoreboard Card) --- */
+.outer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    background-color: #ffffff;
+    color: var(--text-dark);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    /* Stronger shadow */
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 30px;
+    justify-content: space-around;
+}
+
+/* --- Inner Container (Individual Score Block) --- */
+.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 45%;
+    min-width: 250px;
+
+    padding: 25px;
+    border-radius: 12px;
+    background-color: var(--score-bg);
+    border: 1px solid #e0e0e0;
+}
+
+/* Team Names (HOME, GUEST) */
+.inner h1:first-child {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+/* Actual Score Display (home-score, guest-score) */
+.inner h1[id$="-score"] {
+    color: var(--primary-color);
+    margin: 10px 0 30px 0;
+    font-size: 5rem;
+    /* Large score */
+    font-weight: 900;
+    min-width: 150px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* --- Score Increment Buttons --- */
+.inner button {
+    /* Sizing and Spacing */
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    margin: 8px 5px;
+    width: 80px;
+
+    /* Look and Feel (Outline Style) */
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--primary-color);
+    transition: all 0.2s ease;
+}
+
+.inner button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(44, 115, 210, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- Leader Message Display --- */
+#leader {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    min-height: 20px;
+}
+
+/* --- New Game Button --- */
+#make {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--reset-red);
+    color: white;
+    box-shadow: 0 5px 15px rgba(217, 83, 79, 0.3);
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+#make:hover {
+    background-color: #c9302c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(217, 83, 79, 0.4);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 650px) {
+    .outer {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .inner {
+        min-width: 100%;
+    }
+}
